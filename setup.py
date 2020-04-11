@@ -14,7 +14,7 @@ setup(
     long_description_content_type = 'text/markdown',
     author = 'Aaron Esau',
     author_email = 'redpwn@aaronesau.com',
-    packages = ['pystrfry'],
+    packages = ['strfry'],
     scripts = ['scripts/strfry'],
     python_requires = '>=3.6'
 )
