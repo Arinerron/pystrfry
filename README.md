@@ -1,6 +1,6 @@
 # About
 
-`pystrfry` a tool and Python 3 library for Linux for assisting in solving those annoying [`strfry`](http://man7.org/linux/man-pages/man3/strfry.3.html) CTF challenges that seem to be common in CTFs like [ångstromCTF 2020](https://2020.angstromctf.com/) and [DawgCTF 2020](https://umbccd.io/).
+`pystrfry` a tool and Python 3 library for Linux for assisting in solving those annoying [`strfry`](http://man7.org/linux/man-pages/man3/strfry.3.html) CTF challenges that seem to be common in CTFs like [ångstromCTF 2020](https://2020.angstromctf.com/).
 
 No additional requirements other than Linux and Python 3.
 
