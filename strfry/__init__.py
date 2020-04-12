@@ -2,10 +2,14 @@
 
 from ctypes import *
 import time
+import os
 
+# make it so you can pass in libc through LIBC environ var
 
-cdll.LoadLibrary('libc.so.6')
-libc = CDLL('libc.so.6')
+libc_path = os.environ.get('LIBC', os.environ.get('LIBC_PATH', 'libc.so.6'))
+
+cdll.LoadLibrary(libc_path)
+libc = CDLL(libc_path)
 
 
 # setup the types / structs
