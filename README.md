@@ -50,6 +50,9 @@ optional arguments:
 ```
 $ strfry --pid=1337 --ts=1234 "i use arch btw"
 ubs twir ec ha
+
+$ strfry --pid=1337 --ts=1234 "ubs twir ec ha" --decode
+i use arch btw
 ```
 
 ## Python Library
