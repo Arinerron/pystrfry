@@ -31,7 +31,7 @@ class random_data(Structure):
         ('rand_type', c_int),
         ('rand_deg', c_int),
         ('rand_sep', c_int),
-        ('end_ptr', c_int)
+        ('end_ptr', POINTER(c_int))
     ]
 
 rdata_type = c_char_p * 4
@@ -128,4 +128,3 @@ def unstrfry(string, ts = None, pid = None, reset = True):
 
 
 # i use arch btw
-
