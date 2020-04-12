@@ -3,7 +3,7 @@
 from strfry import *
 import argparse
 
-parser = argparse.ArgumentParser(description = 'a CTF tool for solving those annoying strfry challenges')
+parser = argparse.ArgumentParser(description = 'a tool for solving those annoying strfry CTF challenges')
 parser.add_argument('string', nargs = 1, default = None, help = 'the string to manipulate')
 parser.add_argument('--processid', '--pid', '-p', type = int, default = None, help = 'process id which called strfry')
 parser.add_argument('--timestamp', '--ts', '-t', type = int, default = None, help = 'unix timestamp when strfry happened')

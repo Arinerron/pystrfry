@@ -93,12 +93,15 @@ def strfry(string, ts = None, pid = None, reset = True):
         _init_random_state(ts = ts, pid = pid)
 
     # actual strfry mess :(((
-    for i in range(len(string)):
-        j = c_int()
-        libc.random_r(byref(rdata), byref(j))
-        j = j.value % (len(string) - i) + i
+    if string:
+        for i in range(len(string) - 1):
+            j = c_int()
+            libc.random_r(byref(rdata), byref(j))
+            j = j.value % (len(string) - i) + i
 
-        string[i], string[j] = string[j], string[i]
+            string[i], string[j] = string[j], string[i]
+    else:
+        string = list()
 
     # allow us to strfry symbols
     if _initial_type_is_str:
