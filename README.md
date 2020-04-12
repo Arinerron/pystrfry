@@ -1,17 +1,37 @@
 # About
 
-`pystrfry` a tool and Python 3 library for Linux for assisting in solving those annoying [`strfry`](http://man7.org/linux/man-pages/man3/strfry.3.html) CTF challenges that seem to be common in CTFs like [ångstromCTF 2020](https://2020.angstromctf.com/).
+`pystrfry` a tool and Python 3 library for Linux for assisting in solving those annoying [`strfry`](http://man7.org/linux/man-pages/man3/strfry.3.html) CTF challenges that seem to be common in CTFs like [ångstromCTF 2020](https://2020.angstromctf.com/) and [DawgCTF 2020](https://umbccd.io/).
 
 No additional requirements other than Linux and Python 3.
 
-## CLI Usage
+# Installation
+
+## PyPi
 
 ```
-$ ./strfry.py --help
+# pip3 install pystrfry
+```
 
-usage: strfry.py [-h] [--processid PROCESSID] [--timestamp TIMESTAMP] [--decode] string
+## Manual
 
-a CTF tool for solving those annoying strfry challenges
+```
+$ git clone https://github.com/arinerron/pystrfry.git
+$ cd pystrfry
+# python3 setup.py install
+```
+
+# Usage
+
+## Command Line Interface
+
+### Help Menu
+
+```
+$ strfry --help
+
+usage: strfry [-h] [--processid PROCESSID] [--timestamp TIMESTAMP] [--decode] string
+
+a tool for solving those annoying strfry CTF challenges
 
 positional arguments:
   string                the string to manipulate
@@ -22,10 +42,17 @@ optional arguments:
                         process id which called strfry
   --timestamp TIMESTAMP, --ts TIMESTAMP, -t TIMESTAMP
                         unix timestamp when strfry happened
-  --decode, -d          switch to decode mode$ 
+  --decode, -d          switch to decode mode$
 ```
 
-## Python Usage
+### Example
+
+```
+$ strfry --pid=1337 --ts=1234 "i use arch btw"
+ubs twir ec ha
+```
+
+## Python Library
 
 ```
 >>> from strfry import *
