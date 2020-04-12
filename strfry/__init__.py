@@ -94,9 +94,7 @@ def strfry(string, ts = None, pid = None, reset = True):
         libc.random_r(byref(rdata), byref(j))
         j = j.value % (len(string) - i) + i
 
-        c = string[i]
-        string[i] = string[j]
-        string[j] = c
+        string[i], string[j] = string[j], string[i]
 
     # allow us to strfry symbols
     if _initial_type_is_str:
@@ -117,8 +115,7 @@ def unstrfry(string, ts = None, pid = None, reset = True):
     string = list(string)
 
     # use symbols to map strfry
-    seq = list(range(len(string)))
-    seq = strfry(seq, ts = ts, pid = pid, reset = reset)
+    seq = strfry(list(range(len(string))), ts = ts, pid = pid, reset = reset)
     seq_out = [''] * len(seq)
 
     for symbol, i in zip(seq, range(len(seq))):
